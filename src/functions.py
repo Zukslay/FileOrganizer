@@ -23,7 +23,7 @@ def find_path(folder_name):
     for dirpath, _, __ in os.walk(home):
         if is_hidden(dirpath):
             continue
-        print(_)
+        
         basename = os.path.basename(dirpath)
         if folder_name == basename and os.path.isdir(dirpath):
             return dirpath
@@ -61,4 +61,3 @@ def organizer(folder_path):
 
 
 
-print(find_path("lol"))

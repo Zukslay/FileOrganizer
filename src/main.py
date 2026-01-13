@@ -12,11 +12,9 @@ def main():
     folder = sys.argv[1]
     #check if folder exist
     folder_path = find_path(folder)
-    print(folder_path)
 
-    
     if not folder_path:
-        print(f"Error: '{folder}' doesn't exists")
+        print(f"Error: '{folder}/{folder_path}' doesn't exists")
         sys.exit(1)
 
     if not os.path.isdir(folder_path):
