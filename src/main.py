@@ -24,8 +24,7 @@ def main():
 
     try:
         #organize the files in the folder
-        #organizer(folder_path)
-        pass
+        organizer(folder_path)
     except Exception as e:
         print(f"error organizer: {e}")
         sys.exit(1)

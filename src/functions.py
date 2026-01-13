@@ -32,6 +32,7 @@ def organizer(folder_path):
     extensions = get_extensions(folder_path)
     folders_paths = get_folders(extensions, folder_path)
     
+    
     #making the folders
     making_folders(folders_paths)
     
