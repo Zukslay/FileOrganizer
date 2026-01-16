@@ -1,33 +1,38 @@
-import os
 import sys
-from functions import find_path, organizer
+import os
+from main_organize import main_org
+from main_search import main_sea
 
 def main():
     if len(sys.argv) < 2:
         print("Error: need at least one argument")
-        print("python main.sh <folder_name>")
-        print("                  ^^^^^^^^^^^")
+        print("python main.sh <arg>")
+        print("                ^^^")
         sys.exit(1)
 
-    folder = sys.argv[1]
-    #check if folder exist
-    folder_path = find_path(folder)
-
-    if not folder_path:
-        print(f"Error: '{folder}/{folder_path}' doesn't exists")
+    elif len(sys.argv) > 3:
+        print("Error: more than 2 arguments not supported")
         sys.exit(1)
 
-    if not os.path.isdir(folder_path):
-        print(f"Error: '{folder_path}' isn't a folder")
-        sys.exit(1)
-
-
+    argument = sys.argv[1]
     try:
-        #organize the files in the folder
-        organizer(folder_path)
+        flag = [2]
+    except:
+        pass
+
+    if flag:
+        if flag == "--search":
+            main_sea()
+            sys.exit(0)
+        else:
+            print(f"Error: invalid flag {flag}. try with --search")
+            sys.exit(1)
+    
+    try:
+        main_org()
+        sys.exit(0)
     except Exception as e:
-        print(f"error organizer: {e}")
-        sys.exit(1)
+        print(f"Error at main_org: {e}")
 
 if __name__ == "__main__":
     main()
