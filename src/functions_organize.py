@@ -1,11 +1,7 @@
 import os
 import shutil
-from helper_functions import get_extensions, get_folders, making_folders, get_file_paths
-
-#checking if the folder is hidden
-def is_hidden(path):
-    parts = os.path.normpath(path).split("/")
-    return any(part.startswith('.') for part in parts if part)
+from helper_functions_organize import get_extensions, get_folders, making_folders, get_file_paths
+from hidden_function import is_hidden
 
 #checking if the folder exists
 def find_path(folder_name):
