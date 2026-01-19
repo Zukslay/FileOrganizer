@@ -33,6 +33,26 @@ Execute main.sh with the name or path of the folder you want to organize
 ```
 The program can organize folders without knowing their path, as it searches the entire home directory for a folder with the specified name.
 
+# Search update
+
+You can now search for files in your directory based on their content. 
+
+The program accepts a string and returns all paths of text files containing that string.
+
+example:
+```shell
+./main.sh "hello world" --search
+```
+the output
+```shell
+home/user/Documents/hello.txt
+home/user/Documents/folder/world.md
+home/user/Downloads/test.csv
+home/user/Downloads/games/game.log
+```
+only supports "txt", "md", "rtf", "log" and "csv"
+
+
 
 
 
