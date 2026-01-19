@@ -14,6 +14,8 @@ def search_text(text):
 
             if is_hidden(file_path):
                 continue
+            if file.split(".")[-1] not in ("txt", "md", "rtf", "log", "csv"):
+                continue
             
             try:
                 with open(file_path, "r", encoding="utf-8") as f:
@@ -23,4 +25,5 @@ def search_text(text):
             except (IOError, OSError, UnicodeDecodeError) as e:
                 print(f"Error al leer {file_path}: {e}")
                 continue
+    return paths
 

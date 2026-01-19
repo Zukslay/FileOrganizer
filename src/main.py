@@ -16,7 +16,7 @@ def main():
 
     argument = sys.argv[1]
     try:
-        flag = [2]
+        flag = sys.argv[2]
     except:
         pass
 

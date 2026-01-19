@@ -16,7 +16,13 @@ def main_sea():
         print("Error: flag required")
         print("python main.sh <text> <flag>(all flags starts with '--')")
         print("                       ^^^^")
+        sys.exit(1)
 
+    elif type(text) != str:
+        print("Error: first argument type is not str")
+        print("python main.sh <text> <flag>")
+        print("                ^^^^")
+        sys.exit(1)
     try:
         list_of_files = search_text(text)
         for file in list_of_files:
